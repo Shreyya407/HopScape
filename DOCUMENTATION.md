@@ -1,5 +1,5 @@
 # HopScape: Interactive Distance Vector & Link State Routing Simulator
-**Computer Networks Minor Project Documentation & Technical Report**
+
 
 ---
 
