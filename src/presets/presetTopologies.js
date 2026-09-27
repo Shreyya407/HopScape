@@ -1,0 +1,133 @@
+/**
+ * Preset Topologies for HopScape
+ */
+
+export const PRESET_TOPOLOGIES = [
+  {
+    id: 'diamond-4',
+    name: '4-Node Diamond Network',
+    category: 'Standard',
+    description: 'Classic 4-router diamond topology demonstrating alternate path trade-offs between hop count and link weight.',
+    defaultSource: 'A',
+    defaultDest: 'D',
+    nodes: [
+      { id: 'A', label: 'Router A', x: 80, y: 220 },
+      { id: 'B', label: 'Router B', x: 260, y: 110 },
+      { id: 'C', label: 'Router C', x: 260, y: 330 },
+      { id: 'D', label: 'Router D', x: 440, y: 220 },
+    ],
+    edges: [
+      { id: 'A-B', source: 'A', target: 'B', cost: 2 },
+      { id: 'A-C', source: 'A', target: 'C', cost: 5 },
+      { id: 'B-D', source: 'B', target: 'D', cost: 3 },
+      { id: 'C-D', source: 'C', target: 'D', cost: 1 },
+    ],
+  },
+  {
+    id: 'simple-3',
+    name: '3-Node Triangle Network',
+    category: 'Basic',
+    description: 'Simple 3-router triangle demonstrating direct high-cost link vs 2-hop lower-cost shortcut path.',
+    defaultSource: 'A',
+    defaultDest: 'C',
+    nodes: [
+      { id: 'A', label: 'Router A', x: 90, y: 220 },
+      { id: 'B', label: 'Router B', x: 260, y: 110 },
+      { id: 'C', label: 'Router C', x: 430, y: 220 },
+    ],
+    edges: [
+      { id: 'A-B', source: 'A', target: 'B', cost: 2 },
+      { id: 'B-C', source: 'B', target: 'C', cost: 1 },
+      { id: 'A-C', source: 'A', target: 'C', cost: 5 },
+    ],
+  },
+  {
+    id: 'ring-5',
+    name: '5-Node Ring Topology',
+    category: 'Symmetric',
+    description: 'Circular ring network where clockwise and counter-clockwise paths compete for the shortest route.',
+    defaultSource: 'A',
+    defaultDest: 'C',
+    nodes: [
+      { id: 'A', label: 'Router A', x: 260, y: 70 },
+      { id: 'B', label: 'Router B', x: 420, y: 160 },
+      { id: 'C', label: 'Router C', x: 360, y: 340 },
+      { id: 'D', label: 'Router D', x: 160, y: 340 },
+      { id: 'E', label: 'Router E', x: 100, y: 160 },
+    ],
+    edges: [
+      { id: 'A-B', source: 'A', target: 'B', cost: 3 },
+      { id: 'B-C', source: 'B', target: 'C', cost: 4 },
+      { id: 'C-D', source: 'C', target: 'D', cost: 2 },
+      { id: 'D-E', source: 'D', target: 'E', cost: 5 },
+      { id: 'A-E', source: 'A', target: 'E', cost: 1 },
+    ],
+  },
+  {
+    id: 'mesh-5',
+    name: '5-Node Full/Partial Mesh',
+    category: 'High Redundancy',
+    description: 'High-density mesh topology with multiple redundant links and cross-connections.',
+    defaultSource: 'A',
+    defaultDest: 'E',
+    nodes: [
+      { id: 'A', label: 'Router A', x: 80, y: 110 },
+      { id: 'B', label: 'Router B', x: 270, y: 80 },
+      { id: 'C', label: 'Router C', x: 440, y: 130 },
+      { id: 'D', label: 'Router D', x: 380, y: 330 },
+      { id: 'E', label: 'Router E', x: 130, y: 320 },
+    ],
+    edges: [
+      { id: 'A-B', source: 'A', target: 'B', cost: 3 },
+      { id: 'A-E', source: 'A', target: 'E', cost: 7 },
+      { id: 'B-C', source: 'B', target: 'C', cost: 4 },
+      { id: 'B-D', source: 'B', target: 'D', cost: 2 },
+      { id: 'B-E', source: 'B', target: 'E', cost: 6 },
+      { id: 'C-D', source: 'C', target: 'D', cost: 3 },
+      { id: 'D-E', source: 'D', target: 'E', cost: 1 },
+    ],
+  },
+  {
+    id: 'backbone-6',
+    name: '6-Node Enterprise Backbone',
+    category: 'Complex',
+    description: 'Realistic tier network with core backbone routers (B, C), distribution (A, D), and edge access routers (E, F).',
+    defaultSource: 'A',
+    defaultDest: 'F',
+    nodes: [
+      { id: 'A', label: 'Router A', x: 70, y: 130 },
+      { id: 'B', label: 'Router B', x: 220, y: 100 },
+      { id: 'C', label: 'Router C', x: 370, y: 100 },
+      { id: 'D', label: 'Router D', x: 480, y: 130 },
+      { id: 'E', label: 'Router E', x: 180, y: 310 },
+      { id: 'F', label: 'Router F', x: 410, y: 310 },
+    ],
+    edges: [
+      { id: 'A-B', source: 'A', target: 'B', cost: 4 },
+      { id: 'A-E', source: 'A', target: 'E', cost: 2 },
+      { id: 'B-C', source: 'B', target: 'C', cost: 3 },
+      { id: 'B-E', source: 'B', target: 'E', cost: 5 },
+      { id: 'C-D', source: 'C', target: 'D', cost: 2 },
+      { id: 'C-F', source: 'C', target: 'F', cost: 4 },
+      { id: 'D-F', source: 'D', target: 'F', cost: 3 },
+      { id: 'E-F', source: 'E', target: 'F', cost: 6 },
+    ],
+  },
+  {
+    id: 'linear-3',
+    name: '3-Node Linear Line',
+    category: 'Basic',
+    description: 'A --1-- B --2-- C linear pipeline for fundamental step-by-step verification.',
+    defaultSource: 'A',
+    defaultDest: 'C',
+    nodes: [
+      { id: 'A', label: 'Router A', x: 90, y: 220 },
+      { id: 'B', label: 'Router B', x: 260, y: 220 },
+      { id: 'C', label: 'Router C', x: 430, y: 220 },
+    ],
+    edges: [
+      { id: 'A-B', source: 'A', target: 'B', cost: 1 },
+      { id: 'B-C', source: 'B', target: 'C', cost: 2 },
+    ],
+  }
+];
