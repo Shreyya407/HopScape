@@ -33,9 +33,6 @@ export default function Navbar({
               <span className="font-extrabold text-lg tracking-tight bg-gradient-to-r from-cyan-400 via-blue-300 to-purple-400 bg-clip-text text-transparent">
                 HopScape
               </span>
-              <span className="px-1.5 py-0.5 text-[10px] uppercase font-bold tracking-wider bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded">
-                v2.0
-              </span>
             </div>
             <p className="text-[11px] text-slate-400 hidden sm:block">
               See how networks find their way
